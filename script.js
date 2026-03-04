@@ -160,7 +160,7 @@ const testimonials = [
     name: "Johann Mueller",
     role: "Production Director",
     avatar: "assets/images/client-avatar.jpg",
-    logo: "assets/images/Client.png"
+    logo: "assets/images/Client.svg"
   },
   {
     title: "Revolutionized our FIBC production efficiency!",
@@ -184,7 +184,7 @@ const testimonials = [
     name: "Rajesh Kumar",
     role: "Manufacturing Head",
     avatar: "assets/images/client-avatar.jpg",
-    logo: "assets/images/Client.png"
+    logo: "assets/images/Client.svg"
   }
 ];
 
