@@ -80,10 +80,12 @@ if (faqContainer) {
     .map(
       (item, index) => `
         <div class="faq-item">
-          <button class="faq-question" data-index="${index}">
-            ${item.question}
-            <span class="faq-icon">+</span>
-          </button>
+          <div class="faq-question" data-index="${index}">
+            <p>${item.question}</p>
+            <span class="faq-arrow">
+              <img src="./assets/images/ChevronDown.svg" alt="expand question">
+            </span>
+          </div>
           <div class="faq-answer">
             <p>${item.answer}</p>
           </div>
@@ -105,32 +107,32 @@ const usecases = [
   {
     title: "Fishnet Manufacturing",
     desc: "High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.",
-    image: "assets/images/FishnetManufacture.jpg"
+    image: "./assets/images/FishnetManufacture.jpg"
   },
   {
     title: "Fishnet Manufacturing",
     desc: "High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.",
-    image: "assets/images/FishnetManufacture.jpg"
+    image: "./assets/images/FishnetManufacture.jpg"
   },
   {
     title: "Fishnet Manufacturing",
     desc: "High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.",
-    image: "assets/images/FishnetManufacture.jpg"
+    image: "./assets/images/FishnetManufacture.jpg"
   },
   {
     title: "Fishnet Manufacturing",
     desc: "High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.",
-    image: "assets/images/FishnetManufacture.jpg"
+    image: "./assets/images/FishnetManufacture.jpg"
   },
   {
     title: "Fishnet Manufacturing",
     desc: "High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.",
-    image: "assets/images/FishnetManufacture.jpg"
+    image: "./assets/images/FishnetManufacture.jpg"
   },
   {
     title: "Fishnet Manufacturing",
     desc: "High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.",
-    image: "assets/images/FishnetManufacture.jpg"
+    image: "./assets/images/FishnetManufacture.jpg"
   }
 ];
 
@@ -140,8 +142,7 @@ if (track) {
   track.innerHTML = usecases
     .map(
       (item) => `
-        <article class="usecase-card">
-          <div class="usecase-image" style="background-image:url('${item.image}')"></div>
+        <article class="usecase-card" style="background-image:url(${item.image})">
           <div class="usecase-content">
             <h3>${item.title}</h3>
             <p>${item.desc}</p>
@@ -150,6 +151,27 @@ if (track) {
       `
     )
     .join("");
+
+  // Carousel navigation
+  const prevBtn = document.getElementById("usecase-prevBtn");
+  const nextBtn = document.getElementById("usecase-nextBtn");
+  let currentIndex = 0;
+  const cardWidth = 440; // 420px card + 20px gap
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      currentIndex = Math.max(currentIndex - 1, 0);
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      const maxIndex = usecases.length - 1;
+      currentIndex = Math.min(currentIndex + 1, maxIndex);
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    });
+  }
 }
 
 // ================= TESTIMONIALS =================
@@ -212,13 +234,12 @@ if (carousel) {
               </span>
             </div>
 
-            ${
-              item.logo
-                ? `<span class="client-logo">
+            ${item.logo
+          ? `<span class="client-logo">
                      <img src="${item.logo}" alt="Company logo">
                    </span>`
-                : ""
-            }
+          : ""
+        }
           </div>
         </article>
       `
