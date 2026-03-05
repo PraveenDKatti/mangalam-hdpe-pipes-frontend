@@ -11,16 +11,16 @@
 <body>
     <!-- Navbar -->
     <header class="header">
-        <div class="container header__inner">
+        <div class="container header-inner">
 
-            <img class="header__logo" src="./assets/images/Logo.png" alt="Mangalam HDPE Pipes">
+            <img class="header-logo" src="./assets/images/Logo.png" alt="Mangalam HDPE Pipes">
 
             <nav class="nav">
-                <ul class="nav__list">
-                    <li><a class="nav__link" href="#">Home</a></li>
-                    <li><a class="nav__link" href="#products">Products</a></li>
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="#">Home</a></li>
+                    <li><a class="nav-link" href="#products">Products</a></li>
                     <li>
-                        <a class="btn btn--primary nav__contact" href="#contact-us">
+                        <a class="btn btn--primary nav-contact" href="#contact-us">
                             Contact Us
                         </a>
                     </li>
@@ -32,7 +32,6 @@
 
     <!-- Landing / Hero Section -->
     <section id="hero" class="section section--noise">
-
         <div class="container">
 
             <!-- Breadcrumb -->
@@ -41,30 +40,33 @@
                 <span><a href="/products">Two For One Twister</a></span>
             </nav>
 
-
             <div class="product">
 
                 <!-- Product Gallery -->
-                <div class="product__gallery">
-
-                    <div class="gallery__main">
+                <div class="product-gallery">
+                    <div class="gallery-main">
                         <img id="mainImage" src="./assets/images/FishnetManufacture.jpg" alt="Product image">
+                        <div class="carousel-controls">
+                            <button class="hero-prevBtn" aria-label="Previous">
+                                <img src="./assets/images/ArrowLeft.svg" alt="">
+                            </button>
+                            <button class="hero-nextBtn" aria-label="Next">
+                                <img src="./assets/images/ArrowRight.svg" alt="">
+                            </button>
+                        </div>
                     </div>
-
-                    <div class="gallery__thumbs">
-                        <img src="./assets/images/FishnetManufacture.jpg" class="thumb">
-                        <img src="./assets/images/FishnetManufacture.jpg" class="thumb">
-                        <img src="./assets/images/FishnetManufacture.jpg" class="thumb">
-                        <img src="./assets/images/FishnetManufacture.jpg" class="thumb">
-                        <img src="./assets/images/FishnetManufacture.jpg" class="thumb">
+                    <div class="gallery-thumbs">
+                        <span class="thumb"> </span>
+                        <span class="thumb"> </span>
+                        <span class="thumb"> </span>
+                        <span class="thumb"> </span>
+                        <span class="thumb"> </span>
+                        <span class="thumb"> </span>
                     </div>
-
                 </div>
 
-
                 <!-- Product Details -->
-                <div class="product__details">
-
+                <div class="product-details">
                     <!-- Certifications -->
                     <div class="certifications">
                         <span class="cert">
@@ -83,62 +85,48 @@
                         </span>
                     </div>
 
-
-                    <h1 class="product__title">
+                    <h1 class="product-title">
                         Premium HDPE Pipes & Coils for Modern Infrastructure
                     </h1>
 
-
                     <ul class="features">
-                        <li>Leak-Proof Fusion Joints</li>
-                        <li>Chemical Resistance</li>
-                        <li>50+ Year Service Life</li>
-                        <li>Flexible Installation</li>
-                        <li>Flexible Installation</li>
+                        <li><img src="./assets/images/CheckCircle.svg" alt="CheckCircle">Leak-Proof Fusion Joints</li>
+                        <li><img src="./assets/images/CheckCircle.svg" alt="CheckCircle">Chemical Resistance</li>
+                        <li><img src="./assets/images/CheckCircle.svg" alt="CheckCircle">50+ Year Service Life</li>
+                        <li><img src="./assets/images/CheckCircle.svg" alt="CheckCircle">Flexible Installation</li>
+                        <li><img src="./assets/images/CheckCircle.svg" alt="CheckCircle">Flexible Installation</li>
                     </ul>
 
-
                     <div class="price-card">
-
-                        <p class="price-card__label">Price Range</p>
-
-                        <p class="price-card__amount">
+                        <p class="price-card-label">Price Range</p>
+                        <p class="price-card-amount">
                             ₹4,80,000 – 7,90,000
                         </p>
-
-                        <div class="price-card__meta">
+                        <div class="price-card-meta">
                             <span>Shipping: 6–12 days</span>
                             <span>Returns: within 7 days</span>
                         </div>
-
-                        <p class="price-card__cert">
+                        <p class="price-card-cert">
                             Certifications: ISO Certified, BIS Certified
                         </p>
-
                     </div>
 
-
-                    <div class="product__actions">
+                    <div class="product-actions">
                         <button class="btn btn--primary">Get Custom Quote</button>
                         <button class="btn btn--outline">
                             View Technical Specs
                             <img src="./assets/images/ChevronRight.svg" alt="">
                         </button>
                     </div>
-
                 </div>
-
             </div>
-
 
             <!-- Client Logos -->
             <div class="clients">
-
-                <p class="clients__title">
+                <p class="clients-title">
                     Trusted by Hundreds of Companies Globally
                 </p>
-
-                <div class="clients__logos">
+                <div class="clients-logos">
                     <img src="./assets/images/Client.svg" alt="">
                     <img src="./assets/images/Client.svg" alt="">
                     <img src="./assets/images/Client.svg" alt="">
@@ -146,9 +134,7 @@
                     <img src="./assets/images/Client.svg" alt="">
                     <img src="./assets/images/Client.svg" alt="">
                 </div>
-
             </div>
-
         </div>
     </section>
 
@@ -280,7 +266,8 @@
 
                 <div class="contact-right">
                     <form action="/contact" method="post" novalidate>
-                        <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" autocomplete="email" required>
+                        <input type="email" id="newsletter-email" name="email" placeholder="Enter your email"
+                            autocomplete="email" required>
                         <button type="submit">Request Catalogue</button>
                     </form>
                 </div>
@@ -304,8 +291,10 @@
 
                 <!-- controls -->
                 <div class="carousel-controls">
-                    <button id="usecase-prevBtn" aria-label="Previous slide"><img src="./assets/images/ArrowLeft.svg" alt=""></button>
-                    <button id="usecase-nextBtn" aria-label="Next slide"><img src="./assets/images/ArrowRight.svg" alt=""></button>
+                    <button id="usecase-prevBtn" aria-label="Previous slide"><img src="./assets/images/ArrowLeft.svg"
+                            alt=""></button>
+                    <button id="usecase-nextBtn" aria-label="Next slide"><img src="./assets/images/ArrowRight.svg"
+                            alt=""></button>
                 </div>
             </div>
 
