@@ -256,7 +256,7 @@
             <!-- Catalogue -->
             <section id="catalogue-request" aria-labelledby="catalogue-heading">
                 <div class="contact-left">
-                    <h2 id="catalogue-heading">
+                    <h2>
                         Want us to email the entire catalogue?
                     </h2>
                     <p>
@@ -363,13 +363,8 @@
                 </p>
             </div>
 
-            <div class="cards-container">
-                <div class="cards-viewport">
-                    <div id="cards-carousel" class="cards-carousel"></div>
-                </div>
-
-                <!-- pagination -->
-                <ul id="cards-pagination" class="cards-pagination"></ul>
+            <div class="cards-viewport">
+                <div id="cards-carousel" class="cards-carousel"></div>
             </div>
         </div>
     </section>
@@ -378,7 +373,7 @@
     <section id="piping-solutions" class="section section--noise">
         <div class="container">
             <div class="section-intro section-heading-center">
-                <h3>Complete Piping Solutions Portfolio</h3>
+                <h2>Complete Piping Solutions Portfolio</h2>
                 <p>From innovative Two-For-One Twisters to specialized
                     heat setting machines, we deliver complete solutions
                     for modern textile manufacturing.
@@ -395,7 +390,7 @@
                     </div class="card-content">
                     <div class="card-image">
                         <img src="./assets/images/engineer.jpg" alt="engineer">
-                        <button>Learn more</button>
+                        <button class="btn btn--outline">Learn more</button>
                     </div>
                 </div>
                 <div class="card">
@@ -408,7 +403,7 @@
                     </div class="card-content">
                     <div class="card-image">
                         <img src="./assets/images/engineers-with-helmet.jpg" alt="engineer">
-                        <button>Learn more</button>
+                        <button class="btn btn--outline">Learn more</button>
                     </div>
                 </div>
                 <div class="card">
@@ -421,7 +416,7 @@
                     </div class="card-content">
                     <div class="card-image">
                         <img src="./assets/images/engineer.jpg" alt="engineer">
-                        <button>Learn more</button>
+                        <button class="btn btn--outline">Learn more</button>
                     </div>
                 </div>
             </div>
@@ -430,17 +425,17 @@
             <section id="piping-expert-contact" aria-labelledby="piping-expert-heading">
                 <div class="contact-left">
                     <h2 id="piping-expert-heading">
-                        Didn't find what you're looking for?
+                        Didn't find what <span>you're looking for?</span>
                     </h2>
                     <p>
                         Talk to our experts for custom solutions and tailored guidence.
                     </p>
                 </div>
 
-                <div class="contact-right">
+                <button class="btn btn--primary">
                     <img src="./assets/images/PhoneCall.svg" alt="">
-                    <button type="submit">Talk to an expert</button>
-                </div>
+                    Talk to an expert
+                </button>
             </section>
         </div>
     </section>
@@ -449,7 +444,7 @@
     <section id="resources" class="section section--noise">
         <div class="container">
             <div class="top-header section-heading-center">
-                <h3>Resources & Downloads</h3>
+                <h2>Resources & Downloads</h2>
                 <p>Get all the technical documentation and resources
                     you need to make informed decisions about our HDPE
                     piping solutions.
@@ -457,19 +452,25 @@
             </div>
             <div class="download-container">
                 <div class="download-doc">
-                    <span>HDPE Pipe Installation Manual (PDF)</span>
-                    <span>Download PDF</span>
-                    <img src="./assets//images/Download.svg" alt="">
+                    <p>HDPE Pipe Installation Manual (PDF)</p>
+                    <span class="download-right">
+                        <p>Download PDF</p>
+                        <img src="./assets/images/DownloadBlue.svg" alt="Download-Doc">
+                    </span>
                 </div>
                 <div class="download-doc">
-                    <span>Maintenance & Inspection Handbook (PDF)</span>
-                    <span>Download PDF</span>
-                    <img src="./assets//images/Download.svg" alt="">
+                    <p>Maintenance & Inspection Handbook (PDF)</p>
+                    <span class="download-right">
+                        <p>Download PDF</p>
+                        <img src="./assets/images/DownloadBlue.svg" alt="Download-Doc">
+                    </span>
                 </div>
                 <div class="download-doc">
-                    <span>Engineering Specifications Sheet (PDF)</span>
-                    <span>Download PDF</span>
-                    <img src="./assets//images/Download.svg" alt="">
+                    <p>Engineering Specifications Sheet (PDF)</p>
+                    <span class="download-right">
+                        <p>Download PDF</p>
+                        <img src="./assets/images/DownloadBlue.svg" alt="Download-Doc">
+                    </span>
                 </div>
             </div>
         </div>
@@ -478,49 +479,52 @@
     <!-- Contact Us -->
     <section id="contact-form" class="section section--noise">
         <div class="container">
-            <!-- Info -->
-            <div class="contact-info">
-                <div class="top-header">
-                    <h1>Ready to Transform Your Textile Manufacturing?</h1>
-                    <p>Get a personalized consultation and quote for machinery solutions
-                        tailored to your specific production requirements.
-                    </p>
+            <div class="contact-container">
+                <!-- Info -->
+                <div class="contact-info">
+                    <div class="top-header">
+                        <h1>Ready to Transform Your Textile Manufacturing?</h1>
+                        <p>Get a personalized consultation and quote for machinery solutions
+                            tailored to your specific production requirements.
+                        </p>
+                    </div>
+                    <div class="bottom-line">
+                        <hr />
+                        <p>For immediate assistance, feel free to give us a
+                            direct call at +91-XXX-XXX-XXXX. You can also send
+                            us a quick email at info@meeraind.com
+                        </p>
+                    </div>
                 </div>
-                <hr />
-                <div>
-                    <p>For immediate assistance, feel free to give us a
-                        direct call at +91-XXX-XXX-XXXX. You can also send
-                        us a quick email at info@meeraind.com
-                    </p>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form">
+                        <label for="">Contact Us Today</label>
+                        <div class="form-group">
+                            <input placeholder="Full Name" type="text" id="full-name" name="full-name" required />
+                        </div>
+
+                        <div class="form-group">
+                            <input placeholder="Company Name" type="text" id="company-name" name="company-name"
+                                required />
+                        </div>
+
+                        <div class="form-group">
+                            <input placeholder="Email Address" type="email" id="contact-email" name="email"
+                                required></input>
+                        </div>
+
+                        <div class="form-group">
+                            <select name="" id="">
+                                <option value="">+91</option>
+                            </select>
+                            <input placeholder="7003026616" type="text" id="phone" name="phone" required></input>
+                        </div>
+
+                        <button type="submit">Request Custom Quote</button>
+                    </form>
                 </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="contact-form-wrapper">
-                <form class="contact-form">
-                    <label for="">Contact Us Today</label>
-                    <div class="form-group">
-                        <input placeholder="Full Name" type="text" id="full-name" name="full-name" required />
-                    </div>
-
-                    <div class="form-group">
-                        <input placeholder="Company Name" type="text" id="company-name" name="company-name" required />
-                    </div>
-
-                    <div class="form-group">
-                        <input placeholder="Email Address" type="email" id="contact-email" name="email"
-                            required></input>
-                    </div>
-
-                    <div class="form-group">
-                        <select name="" id="">
-                            <option value="">+91</option>
-                        </select>
-                        <input placeholder="7003026616" type="text" id="phone" name="phone" required></input>
-                    </div>
-
-                    <button type="submit">Request Custom Quote</button>
-                </form>
             </div>
         </div>
     </section>
@@ -531,7 +535,7 @@
             <div class="main-footer">
                 <div class="top-header">
                     <img src="./assets/images/Logo.png" alt="Logo">
-                    <label for="">Premium HDPE Pipes & Fittings Manufacturer in South India</label>
+                    <label for="">Premium <span>HDPE Pipes & Fittings Manufacturer</span> in South India</label>
                 </div>
                 <div class="section-headers">
                     <div class="footer-section">
@@ -564,7 +568,7 @@
                     </div>
                     <div class="footer-section">
                         <h3>Contact</h3>
-                        <div class="footer-links">
+                        <div class="footer-contact-reach">
                             <p>
                                 <img src="./assets/images/MapPinLocation.svg" alt="Map Location">
                                 <span>2126, Road No. 2, GIDC Sachin, Surat - 394 230 Gujarat, India</span>

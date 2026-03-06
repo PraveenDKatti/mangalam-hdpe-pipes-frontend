@@ -211,7 +211,6 @@ const testimonials = [
 ];
 
 const carousel = document.getElementById("cards-carousel");
-const pagination = document.getElementById("cards-pagination");
 
 if (carousel) {
   carousel.innerHTML = testimonials
@@ -229,26 +228,20 @@ if (carousel) {
             <div class="client-info">
               <img src="${item.avatar}" alt="${item.name}">
               <span>
-                <p>${item.name}</p>
-                <p>${item.role}</p>
+                <p class="name">${item.name}</p>
+                <p class="role">${item.role}</p>
               </span>
             </div>
 
             ${item.logo
-          ? `<span class="client-logo">
+              ? `<span class="client-logo">
                      <img src="${item.logo}" alt="Company logo">
                    </span>`
-          : ""
-        }
+              : ""
+            }
           </div>
         </article>
       `
     )
-    .join("");
-}
-
-if (pagination) {
-  pagination.innerHTML = testimonials
-    .map((_, index) => `<li class="dot" data-index="${index}"></li>`)
     .join("");
 }
