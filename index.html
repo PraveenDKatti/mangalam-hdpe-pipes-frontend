@@ -12,7 +12,6 @@
     <!-- Navbar -->
     <header class="header">
         <div class="container header-inner">
-
             <img class="header-logo" src="./assets/images/Logo.png" alt="Mangalam HDPE Pipes">
 
             <nav class="nav">
@@ -47,12 +46,8 @@
                     <div class="gallery-main">
                         <img id="mainImage" src="./assets/images/FishnetManufacture.jpg" alt="Product image">
                         <div class="carousel-controls">
-                            <button class="hero-prevBtn" aria-label="Previous">
-                                <img src="./assets/images/ArrowLeft.svg" alt="">
-                            </button>
-                            <button class="hero-nextBtn" aria-label="Next">
-                                <img src="./assets/images/ArrowRight.svg" alt="">
-                            </button>
+                            <button class="hero-prevBtn carousel-btn" aria-label="Previous"></button>
+                            <button class="hero-nextBtn carousel-btn" aria-label="Next"></button>
                         </div>
                     </div>
                     <div class="gallery-thumbs">
@@ -90,11 +85,11 @@
                     </h1>
 
                     <ul class="features">
-                        <li><img src="./assets/images/CheckCircle.svg" alt="CheckCircle">Leak-Proof Fusion Joints</li>
-                        <li><img src="./assets/images/CheckCircle.svg" alt="CheckCircle">Chemical Resistance</li>
-                        <li><img src="./assets/images/CheckCircle.svg" alt="CheckCircle">50+ Year Service Life</li>
-                        <li><img src="./assets/images/CheckCircle.svg" alt="CheckCircle">Flexible Installation</li>
-                        <li><img src="./assets/images/CheckCircle.svg" alt="CheckCircle">Flexible Installation</li>
+                        <li>Leak-Proof Fusion Joints</li>
+                        <li>Chemical Resistance</li>
+                        <li>50+ Year Service Life</li>
+                        <li>Flexible Installation</li>
+                        <li>Flexible Installation</li>
                     </ul>
 
                     <div class="price-card">
@@ -254,7 +249,7 @@
             </section>
 
             <!-- Catalogue -->
-            <section id="catalogue-request" aria-labelledby="catalogue-heading">
+            <section id="catalogue-request" class="cta-banner" aria-labelledby="catalogue-heading">
                 <div class="contact-left">
                     <h2>
                         Want us to email the entire catalogue?
@@ -314,6 +309,8 @@
                     consistent quality, optimal material properties,
                     and dimensional accuracy in every pipe we manufacture.</p>
             </div>
+
+            <!-- DESKTOP: tabs + side-by-side layout -->
             <div class="process-content">
                 <ul class="process-tabs">
                     <li>Raw Material</li>
@@ -323,31 +320,49 @@
                     <li>Quality Control</li>
                     <li>Marking</li>
                     <li>Cutting</li>
-                    <li>Packafing</li>
+                    <li>Packaging</li>
                 </ul>
                 <div class="desc-gallery">
                     <div class="process-detail">
                         <h2>High-Grade Raw Material Selection</h2>
-                        <p>Vacuum sizing tanks ensure precise outer
-                            diameter while internal pressure maintains
-                            perfect roundness and wall thickness uniformity.
+                        <p>Vacuum sizing tanks ensure precise outer diameter
+                            while internal pressure maintains perfect roundness
+                            and wall thickness uniformity.
                         </p>
-                        <p><img src="./assets/images/CheckCircle.svg" alt=""> PE100 grade material</p>
-                        <p><img src="./assets/images/CheckCircle.svg" alt=""> Optimal molecular weight distribution</p>
+                        <ul class="features">
+                            <li>PE100 grade material</li>
+                            <li>Optimal molecular weight distribution</li>
+                        </ul>
                     </div>
                     <section class="process-desc">
                         <div class="carousel-controls">
-                            <button id="process-prevBtn" aria-label="Previous">
-                                <img src="./assets/images/ArrowLeft.svg" alt="">
-                            </button>
-                            <button id="process-nextBtn" aria-label="Next">
-                                <img src="./assets/images/ArrowRight.svg" alt="">
-                            </button>
+                            <button id="process-prevBtn" class="carousel-btn" aria-label="Previous"></button>
+                            <button id="process-nextBtn" class="carousel-btn" aria-label="Next"></button>
                         </div>
                         <div class="process-usecase-card"></div>
                     </section>
                 </div>
             </div>
+
+            <!-- MOBILE: single card carousel -->
+            <div class="process-mobile-card">
+                <div class="process-mobile-step">Step 1/8: Raw Material</div>
+                <h2 class="process-mobile-title">High-Grade Raw Material Selection</h2>
+                <p class="process-mobile-desc">Vacuum sizing tanks ensure precise outer diameter
+                    while internal pressure maintains perfect roundness
+                    and wall thickness uniformity.</p>
+                <ul class="features process-mobile-features">
+                    <li>PE100 grade material</li>
+                    <li>Optimal molecular weight distribution</li>
+                </ul>
+                <div class="process-mobile-image"></div>
+                <div class="process-mobile-nav">
+                    <button id="mobile-process-prevBtn">← Previous</button>
+                    <div class="process-mobile-divider"></div>
+                    <button id="mobile-process-nextBtn">Next →</button>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -422,7 +437,7 @@
             </div>
 
             <!-- Conact for solutions -->
-            <section id="piping-expert-contact" aria-labelledby="piping-expert-heading">
+            <section id="piping-expert-contact" class="cta-banner" aria-labelledby="piping-expert-heading">
                 <div class="contact-left">
                     <h2 id="piping-expert-heading">
                         Didn't find what <span>you're looking for?</span>
@@ -596,13 +611,65 @@
                 </div>
             </div>
             <div class="copyright-footer">
-                <span>Copyright © 2025 Meera Industries Limited | All Rights Reserved</span>
-                <span>Privacy Policy</span>
-                <span>Terms of Service</span>
-                <span>Sitemap</span>
+                <p>Copyright © 2025 Meera Industries Limited | All Rights Reserved</p>
+                <p>
+                    <span>Privacy Policy</span>
+                    <span>Terms of Service</span>
+                    <span>Sitemap</span>
+                </p>
             </div>
         </div>
     </section>
+
+    <!-- Catalogue Modal -->
+    <div id="catalogue-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Let us email the entire catalogue to you</h3>
+                <button class="modal-close" id="modal-close">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-field">
+                    <label>Your Email <span>*</span></label>
+                    <input type="email" placeholder="example@gmail.com" required />
+                </div>
+                <div class="modal-field">
+                    <label>Your Contact <span class="optional">(Optional)</span></label>
+                    <input type="tel" placeholder="+91-0000000000" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-submit">Download Brochure</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Modal -->
+    <div id="quote-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Request a call back</h3>
+                <button class="modal-close" id="modal-close">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-field">
+                    <input type="email" placeholder="Full Name" required />
+                </div>
+                <div class="modal-field">
+                    <input type="email" placeholder="Company Name" required />
+                </div>
+                <div class="modal-field">
+                    <input type="email" placeholder="Email Address" required />
+                </div>
+                <div class="modal-field">
+                    <input type="tel" placeholder="7003026616" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-submit">Submit Form</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Logic file -->
     <script src="script.js"></script>

@@ -245,3 +245,160 @@ if (carousel) {
     )
     .join("");
 }
+
+// ================= MOBILE PROCESS CAROUSEL =================
+const processSteps = [
+  {
+    step: "Raw Material",
+    title: "High-Grade Raw Material Selection",
+    desc: "Vacuum sizing tanks ensure precise outer diameter while internal pressure maintains perfect roundness and wall thickness uniformity.",
+    features: ["PE100 grade material", "Optimal molecular weight distribution"],
+    image: "./assets/images/FishnetManufacture.jpg"
+  },
+  {
+    step: "Extrusion",
+    title: "High-Grade Raw Material Selection",
+    desc: "Vacuum sizing tanks ensure precise outer diameter while internal pressure maintains perfect roundness and wall thickness uniformity.",
+    features: ["PE100 grade material", "Optimal molecular weight distribution"],
+    image: "./assets/images/FishnetManufacture.jpg"
+  },
+  {
+    step: "Cooling",
+    title: "High-Grade Raw Material Selection",
+    desc: "Vacuum sizing tanks ensure precise outer diameter while internal pressure maintains perfect roundness and wall thickness uniformity.",
+    features: ["PE100 grade material", "Optimal molecular weight distribution"],
+    image: "./assets/images/FishnetManufacture.jpg"
+  },
+  {
+    step: "Sizing",
+    title: "High-Grade Raw Material Selection",
+    desc: "Vacuum sizing tanks ensure precise outer diameter while internal pressure maintains perfect roundness and wall thickness uniformity.",
+    features: ["PE100 grade material", "Optimal molecular weight distribution"],
+    image: "./assets/images/FishnetManufacture.jpg"
+  },
+  {
+    step: "Quality Control",
+    title: "High-Grade Raw Material Selection",
+    desc: "Vacuum sizing tanks ensure precise outer diameter while internal pressure maintains perfect roundness and wall thickness uniformity.",
+    features: ["PE100 grade material", "Optimal molecular weight distribution"],
+    image: "./assets/images/FishnetManufacture.jpg"
+  },
+  {
+    step: "Marking",
+    title: "High-Grade Raw Material Selection",
+    desc: "Vacuum sizing tanks ensure precise outer diameter while internal pressure maintains perfect roundness and wall thickness uniformity.",
+    features: ["PE100 grade material", "Optimal molecular weight distribution"],
+    image: "./assets/images/FishnetManufacture.jpg"
+  },
+  {
+    step: "Cutting",
+    title: "High-Grade Raw Material Selection",
+    desc: "Vacuum sizing tanks ensure precise outer diameter while internal pressure maintains perfect roundness and wall thickness uniformity.",
+    features: ["PE100 grade material", "Optimal molecular weight distribution"],
+    image: "./assets/images/FishnetManufacture.jpg"
+  },
+  {
+    step: "Packaging",
+    title: "High-Grade Raw Material Selection",
+    desc: "Vacuum sizing tanks ensure precise outer diameter while internal pressure maintains perfect roundness and wall thickness uniformity.",
+    features: ["PE100 grade material", "Optimal molecular weight distribution"],
+    image: "./assets/images/FishnetManufacture.jpg"
+  },
+];
+
+let mobileProcessIndex = 0;
+const total = processSteps.length;
+
+function updateMobileProcess() {
+  const step = processSteps[mobileProcessIndex];
+  document.querySelector('.process-mobile-step').textContent =
+    `Step ${mobileProcessIndex + 1}/${total}: ${step.step}`;
+  document.querySelector('.process-mobile-title').textContent = step.title;
+  document.querySelector('.process-mobile-desc').textContent = step.desc;
+  document.querySelector('.process-mobile-image').style.backgroundImage =
+    `url('${step.image}')`;
+  document.querySelector('.process-mobile-features').innerHTML =
+    step.features.map(f => `<li>${f}</li>`).join('');
+}
+
+const mobilePrev = document.getElementById('mobile-process-prevBtn');
+const mobileNext = document.getElementById('mobile-process-nextBtn');
+
+if (mobilePrev) {
+  mobilePrev.addEventListener('click', () => {
+    mobileProcessIndex = Math.max(mobileProcessIndex - 1, 0);
+    updateMobileProcess();
+  });
+}
+
+if (mobileNext) {
+  mobileNext.addEventListener('click', () => {
+    mobileProcessIndex = Math.min(mobileProcessIndex + 1, total - 1);
+    updateMobileProcess();
+  });
+}
+
+// ================= MODAL =================
+function openModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (!modal) return;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (!modal) return;
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// triggers
+const datasheetBtn = document.querySelector('.download-specs-btn button');
+const requestQuoteBtn = document.querySelector('.quote-request-btn button');
+
+if (datasheetBtn) datasheetBtn.addEventListener('click', () => openModal('catalogue-modal'));
+if (requestQuoteBtn) requestQuoteBtn.addEventListener('click', () => openModal('quote-modal'));
+
+// close buttons — works for any modal-close button inside any modal
+document.querySelectorAll('.modal-close').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modal = btn.closest('.modal-overlay');
+    if (modal) closeModal(modal.id);
+  });
+});
+
+// close on backdrop click
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModal(overlay.id);
+  });
+});
+
+// close on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(modal => {
+      closeModal(modal.id);
+    });
+  }
+});
+
+
+// ================= NAVBAR SCROLL HIDE/SHOW =================
+const header = document.querySelector('.header');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY > lastScrollY && currentScrollY > 80) {
+    // scrolling down — hide
+    header.classList.add('header--hidden');
+  } else {
+    // scrolling up — show
+    header.classList.remove('header--hidden');
+  }
+
+  lastScrollY = currentScrollY;
+});
