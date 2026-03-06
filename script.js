@@ -234,17 +234,55 @@ if (carousel) {
             </div>
 
             ${item.logo
-              ? `<span class="client-logo">
+          ? `<span class="client-logo">
                      <img src="${item.logo}" alt="Company logo">
                    </span>`
-              : ""
-            }
+          : ""
+        }
           </div>
         </article>
       `
     )
     .join("");
 }
+
+// ================= HERO PAGE CAROUSEL =================
+const mainImage = document.getElementById("mainImage");
+const prevBtn = document.getElementById("hero-prevBtn");
+const nextBtn = document.getElementById("hero-nextBtn");
+const thumbs = document.querySelectorAll(".thumb");
+
+let currentIndex = 0;
+const images = Array.from(thumbs).map(img => img.src);
+
+function updateGallery(index) {
+  if (index < 0) {
+    index = images.length - 1;
+  }
+
+  if (index >= images.length) {
+    index = 0;
+  }
+
+  currentIndex = index;
+  mainImage.src = images[currentIndex] || "./assets/images/FishnetManufacture.jpg";
+
+  thumbs.forEach(t => t.classList.remove("active"));
+  thumbs[currentIndex].classList.add("active");
+}
+
+thumbs.forEach((thumb, index) => {
+  thumb.addEventListener("click", () => {
+    updateGallery(index);
+  });
+});
+
+nextBtn.addEventListener("click", () => {
+  updateGallery(currentIndex + 1);
+});
+prevBtn.addEventListener("click", () => {
+  updateGallery(currentIndex - 1);
+});
 
 // ================= MOBILE PROCESS CAROUSEL =================
 const processSteps = [
@@ -338,6 +376,7 @@ if (mobileNext) {
   });
 }
 
+
 // ================= MODAL =================
 function openModal(modalId) {
   const modal = document.getElementById(modalId);
@@ -402,3 +441,37 @@ window.addEventListener('scroll', () => {
 
   lastScrollY = currentScrollY;
 });
+
+
+// ================= IMAGE ZOOM =================
+const mainFigure = document.getElementById("mainImage");
+const zoomResult = document.getElementById("zoomResult");
+
+const zoomLevel = 2;
+
+mainFigure.addEventListener("mouseenter", () => {
+    zoomResult.style.display = "block";
+    zoomResult.style.backgroundImage = `url(${mainFigure.src})`;
+    zoomResult.style.backgroundSize =
+        `${mainFigure.width * zoomLevel}px ${mainFigure.height * zoomLevel}px`;
+});
+
+mainFigure.addEventListener("mouseleave", () => {
+    zoomResult.style.display = "none";
+});
+
+mainFigure.addEventListener("mousemove", moveZoom);
+
+function moveZoom(e){
+
+    const rect = mainFigure.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const percentX = x / rect.width;
+    const percentY = y / rect.height;
+
+    zoomResult.style.backgroundPosition =
+        `${percentX * 100}% ${percentY * 100}%`;
+}
